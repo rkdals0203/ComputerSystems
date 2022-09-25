@@ -1,38 +1,37 @@
-#define _CRT_NONSTDC_NO_WARNINGS
 #include<stdio.h>
-#include <curses.h>
+void fibonacci (int num);
+void main()
+{
+	int num = 0;
+	
+	printf("Enter number of terms: ");
+	scanf("%d", &num);
+	fibonacci(num);
+}
 
-int main() {
-    printf("\n\n\t\tStudytonight - Best place to learn\n\n\n");
-    int array[100], position, c, n, value;
+void fibonacci (int num)
+{
+	int a, b, c, i = 3;
+	a = 0;
+	b = 1;
+	
+	if (num==1)
+	{
+		printf("%d",a);
+	}
+	
+	if(num>=2)
+	{
+		printf("%d\t%d", a, b);
+	}
+	
+	while(i<=num)
+	{
+		c=a+b;
+		printf("\t%d", c);
+		a = b;
+		b = c;
+		i++;
+	}		
 
-    printf("\n\nEnter number of elements in array\n");
-    scanf("%d", &n);
-
-    printf("\n\nEnter %d elements\n", n);
-    for(c = 0; c<n; c++)
-        scanf("%d", &array[c]);
-
-    printf("\n\nEnter the location where you want to insert new element:  ");
-    scanf("%d", &position);
-
-    printf("\n\nEnter the value to insert: ");
-    scanf("%d", &value);
-
-    // shifting the elements from (position to n) to right3
-    for(c=n-1; c>= position-1; c--)
-        array[c+1]=array[c];
-
-    array[position -1] = value; // inserting the given value
-
-    printf("\n\nResultant array is  ");
-    /*
-        the array size gets increased by 1
-        after insertion of the element
-    */
-    for(c=0; c<=n; c++)
-        printf("%d ", array[c]);
-    
-    printf("\n\n\t\t\tCdoing is Fun !\n\n\n");
-    return 0;
 }
