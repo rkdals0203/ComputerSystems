@@ -25,13 +25,12 @@ void fibonacci (int num)
 		printf("%d\t%d", a, b);
 	}
 	
-	while(i<=num)
+	for(i; i<=num; i++)
 	{
 		c=a+b;
 		printf("\t%d", c);
 		a = b;
 		b = c;
-		i++;
 	}		
 
 }

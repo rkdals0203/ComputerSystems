@@ -11,7 +11,7 @@ int main() {
     for(c = 0; c<n; c++)
         scanf("%d", &array[c]);
 
-    printf("\n\nEnter the location where you want to insert new element:  ");
+    printf("\n\nEnter the location where you want to insert new element: ");
     scanf("%d", &position);
 
     printf("\n\nEnter the value to insert: ");
